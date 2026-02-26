@@ -1,0 +1,135 @@
+# 长沙市花凝眸咨询有限公司官网配置
+# Jekyll配置文件
+
+# 网站基础信息
+title: "长沙市花凝眸咨询有限公司"
+description: "专业ISO认证咨询服务，提供ISO9001、ISO14001、ISO45001等质量管理体系认证咨询"
+baseurl: "" # 子目录路径，如果部署在子目录
+url: "https://huaningmou.com" # 生产环境域名
+
+# 作者信息
+author:
+  name: "长沙市花凝眸咨询有限公司"
+  email: "18008451466@163.com"
+
+# 构建设置
+markdown: kramdown
+permalink: pretty
+timezone: Asia/Shanghai
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# 包含文件
+include:
+  - _redirects
+  - .well-known
+
+# SEO设置
+seo:
+  type: "Business"
+  name: "长沙市花凝眸咨询有限公司"
+  description: "专业ISO认证咨询服务"
+  url: "https://huaningmou.com"
+  logo: "/assets/images/logo.png"
+  sameAs:
+    - "https://github.com/yourusername/huaningmou-website"
+
+# 公司信息
+company:
+  name: "长沙市花凝眸咨询有限公司"
+  phone: "18008451466"
+  phone2: "13690713054"
+  wechat: "18008451466"
+  email: "18008451466@163.com"
+  address: "长沙市雨花区井湾子街道湘府东路二段517号红星大厦2430室"
+  working_hours: "周一至周五 9:00-18:00"
+
+# 社交媒体
+social:
+  wechat: "18008451466"
+  email: "18008451466@163.com"
+
+# 导航菜单
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "服务项目"
+    url: "/services.html"
+  - title: "关于我们"
+    url: "/about.html"
+  - title: "联系我们"
+    url: "/contact.html"
+  - title: "博客"
+    url: "/blog/"
+
+# 服务项目
+services:
+  - title: "ISO 9001质量管理体系认证"
+    description: "帮助企业建立完善的质量管理体系，提升产品质量和客户满意度"
+    icon: "quality"
+  - title: "ISO 14001环境管理体系认证"
+    description: "建立环境管理体系，实现可持续发展，提升企业环保形象"
+    icon: "environment"
+  - title: "ISO 45001职业健康安全管理体系认证"
+    description: "保障员工健康安全，预防职业伤害，提升企业社会责任"
+    icon: "safety"
+  - title: "三体系整合认证"
+    description: "质量、环境、职业健康安全三体系整合，提高管理效率"
+    icon: "integration"
+  - title: "ISO 13485医疗器械质量管理体系"
+    description: "医疗器械行业专业认证，满足法规要求，保障产品安全"
+    icon: "medical"
+  - title: "ISO 50430工程建设施工企业质量管理规范"
+    description: "建筑施工企业专业认证，提升工程质量和管理水平"
+    icon: "construction"
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "长沙市花凝眸咨询有限公司"
+
+# SASS设置
+sass:
+  style: compressed
+
+# 开发环境设置
+development: &development
+  url: http://localhost:4000
+  analytics: false
+
+# 生产环境设置
+production: &production
+  url: https://huaningmou.com
+  analytics: true
+
+# 环境检测
+environment: production
+
+# 根据环境选择配置
+if site.environment == "production"
+  <<: *production
+else
+  <<: *development

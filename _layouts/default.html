@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="ISO认证,湖南ISO,长沙认证咨询,质量管理体系,ISO9001,ISO14001,ISO45001">
+    <meta name="author" content="{{ site.author.name }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Jekyll SEO Tag -->
+    {% seo %}
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <span class="logo-text">花凝眸咨询</span>
+                        <span class="logo-subtext">专业ISO认证服务</span>
+                    </a>
+                </div>
+                
+                <!-- 导航菜单 -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        {% for item in site.navigation %}
+                        <li class="nav-item">
+                            <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                
+                <!-- 联系电话 -->
+                <div class="header-contact">
+                    <a href="tel:{{ site.company.phone }}" class="phone-link">
+                        <span class="phone-icon">📞</span>
+                        <span class="phone-number">{{ site.company.phone }}</span>
+                    </a>
+                    <a href="#contact" class="btn btn-primary">免费咨询</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="mobile-menu-btn" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-list">
+                {% for item in site.navigation %}
+                <li class="mobile-nav-item">
+                    <a href="{{ item.url }}" class="mobile-nav-link {% if page.url == item.url %}active{% endif %}">
+                        {{ item.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="mobile-contact">
+                <a href="tel:{{ site.company.phone }}" class="mobile-phone-link">
+                    <span class="phone-icon">📞</span>
+                    {{ site.company.phone }}
+                </a>
+                <a href="#contact" class="btn btn-primary btn-block">免费咨询</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- 公司信息 -->
+                <div class="footer-section">
+                    <h3 class="footer-title">长沙市花凝眸咨询有限公司</h3>
+                    <p class="footer-description">专业ISO认证咨询服务，助力企业提升管理水平，实现可持续发展。</p>
+                    <div class="contact-info">
+                        <p><strong>电话：</strong>{{ site.company.phone }} / {{ site.company.phone2 }}</p>
+                        <p><strong>微信：</strong>{{ site.company.wechat }}（微信同号）</p>
+                        <p><strong>邮箱：</strong>{{ site.company.email }}</p>
+                        <p><strong>地址：</strong>{{ site.company.address }}</p>
+                        <p><strong>工作时间：</strong>{{ site.company.working_hours }}</p>
+                    </div>
+                </div>
+                
+                <!-- 快速链接 -->
+                <div class="footer-section">
+                    <h3 class="footer-title">快速链接</h3>
+                    <ul class="footer-links">
+                        {% for item in site.navigation %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <!-- 服务项目 -->
+                <div class="footer-section">
+                    <h3 class="footer-title">服务项目</h3>
+                    <ul class="footer-services">
+                        {% for service in site.services limit:6 %}
+                        <li><a href="/services.html#{{ service.title | slugify }}">{{ service.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <!-- 微信二维码 -->
+                <div class="footer-section">
+                    <h3 class="footer-title">微信咨询</h3>
+                    <div class="wechat-qr">
+                        <div class="qr-placeholder">
+                            <div class="qr-text">微信二维码</div>
+                            <div class="qr-hint">扫码添加微信</div>
+                        </div>
+                        <p class="wechat-number">微信号：{{ site.company.wechat }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 版权信息 -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; {{ site.time | date: '%Y' }} 长沙市花凝眸咨询有限公司 版权所有
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="/privacy.html">隐私政策</a>
+                    <a href="/terms.html">服务条款</a>
+                    <a href="/sitemap.xml">网站地图</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- 百度统计 (可选) -->
+    <!--
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?your-baidu-tracking-id";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    -->
+    
+    <!-- Google Analytics (可选) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
+    -->
+</body>
+</html>

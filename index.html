@@ -1,0 +1,248 @@
+---
+layout: default
+title: 专业ISO认证咨询服务
+description: 长沙市花凝眸咨询有限公司提供ISO9001、ISO14001、ISO45001等质量管理体系认证咨询，专业团队，高效服务，助力企业提升管理水平。
+---
+
+<!-- 英雄区域 -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">专业ISO认证咨询服务</h1>
+            <p class="hero-subtitle">助力企业建立完善管理体系，提升竞争力，实现可持续发展</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-large">免费咨询</a>
+                <a href="/services.html" class="btn btn-secondary btn-large">查看服务</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">服务企业</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">认证通过率</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">快速响应</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10年+</span>
+                    <span class="stat-label">行业经验</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 服务展示 -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">我们的服务</h2>
+            <p class="section-subtitle">专业ISO认证咨询服务，覆盖各行业质量管理需求</p>
+        </div>
+        
+        <div class="services-grid">
+            {% for service in site.services %}
+            <div class="service-card">
+                <div class="service-icon">
+                    <!-- 这里可以放置图标 -->
+                    <span class="icon-placeholder">{{ service.icon }}</span>
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.description }}</p>
+                <a href="/services.html#{{ service.title | slugify }}" class="service-link">了解更多 →</a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="section-actions">
+            <a href="/services.html" class="btn btn-outline">查看所有服务</a>
+        </div>
+    </div>
+</section>
+
+<!-- 公司优势 -->
+<section class="advantages-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">为什么选择我们</h2>
+            <p class="section-subtitle">专业团队，高效服务，值得信赖</p>
+        </div>
+        
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <div class="advantage-icon">👨‍💼</div>
+                <h3 class="advantage-title">专业团队</h3>
+                <p class="advantage-description">拥有10年以上ISO认证经验的专业顾问团队，熟悉各行业认证要求</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">⚡</div>
+                <h3 class="advantage-title">高效服务</h3>
+                <p class="advantage-description">快速响应客户需求，定制化解决方案，缩短认证周期</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">💰</div>
+                <h3 class="advantage-title">合理收费</h3>
+                <p class="advantage-description">透明收费标准，无隐藏费用，性价比高</p>
+            </div>
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">📈</div>
+                <h3 class="advantage-title">持续支持</h3>
+                <p class="advantage-description">认证后持续跟踪服务，帮助企业持续改进管理体系</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 成功案例 -->
+<section class="cases-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">成功案例</h2>
+            <p class="section-subtitle">我们帮助众多企业成功获得ISO认证</p>
+        </div>
+        
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-industry">制造业</div>
+                <h3 class="case-title">湖南某机械制造公司</h3>
+                <p class="case-description">成功获得ISO9001质量管理体系认证，产品质量合格率提升15%，客户投诉率下降30%</p>
+                <div class="case-certifications">
+                    <span class="cert-badge">ISO9001</span>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-industry">建筑业</div>
+                <h3 class="case-title">长沙某建筑工程公司</h3>
+                <p class="case-description">完成ISO50430工程建设施工企业质量管理规范认证，成功中标多个政府项目</p>
+                <div class="case-certifications">
+                    <span class="cert-badge">ISO50430</span>
+                    <span class="cert-badge">ISO9001</span>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-industry">医疗器械</div>
+                <h3 class="case-title">湖南某医疗器械公司</h3>
+                <p class="case-description">获得ISO13485医疗器械质量管理体系认证，产品成功进入医院采购目录</p>
+                <div class="case-certifications">
+                    <span class="cert-badge">ISO13485</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-actions">
+            <a href="/about.html#cases" class="btn btn-outline">查看更多案例</a>
+        </div>
+    </div>
+</section>
+
+<!-- 联系表单 -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2 class="contact-title">立即咨询</h2>
+                <p class="contact-subtitle">免费获取ISO认证方案和报价</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-content">
+                            <h4>电话咨询</h4>
+                            <p>{{ site.company.phone }}</p>
+                            <p>{{ site.company.phone2 }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-content">
+                            <h4>微信咨询</h4>
+                            <p>{{ site.company.wechat }}（微信同号）</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-content">
+                            <h4>邮箱联系</h4>
+                            <p>{{ site.company.email }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-content">
+                            <h4>公司地址</h4>
+                            <p>{{ site.company.address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="consultation-form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">电话 *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="请输入您的联系电话">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">公司名称</label>
+                        <input type="text" id="company" name="company" placeholder="请输入您的公司名称">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">咨询项目</label>
+                        <select id="service" name="service">
+                            <option value="">请选择咨询项目</option>
+                            <option value="ISO9001">ISO 9001质量管理体系认证</option>
+                            <option value="ISO14001">ISO 14001环境管理体系认证</option>
+                            <option value="ISO45001">ISO 45001职业健康安全管理体系认证</option>
+                            <option value="three-system">三体系整合认证</option>
+                            <option value="ISO13485">ISO 13485医疗器械质量管理体系</option>
+                            <option value="ISO50430">ISO 50430工程建设施工企业质量管理规范</option>
+                            <option value="other">其他认证咨询</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">咨询内容</label>
+                        <textarea id="message" name="message" rows="4" placeholder="请简要描述您的需求..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">提交咨询</button>
+                    
+                    <p class="form-note">提交后我们的顾问将在24小时内联系您</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA横幅 -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">立即开始您的ISO认证之旅</h2>
+            <p class="cta-text">专业顾问一对一服务，定制化解决方案，助您快速获得认证</p>
+            <div class="cta-buttons">
+                <a href="tel:{{ site.company.phone }}" class="btn btn-light">立即致电</a>
+                <a href="#contact" class="btn btn-outline-light">在线咨询</a>
+            </div>
+        </div>
+    </div>
+</section>
