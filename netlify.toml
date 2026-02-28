@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+  command = "echo 'Building static site...'"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# SEO优化
+[build.processing]
+  skip_processing = true
